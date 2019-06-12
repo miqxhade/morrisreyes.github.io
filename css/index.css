@@ -112,7 +112,7 @@ box-shadow: -2px 3px 14px -5px rgba(195,240,240,1);
     text-align: center;
   }
   .column:hover .overlay{
-    opacity: 1;
+    opacity: 2;
   }
   
   .content {
