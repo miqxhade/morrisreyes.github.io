@@ -1,96 +1,165 @@
 <!DOCTYPE html>
 <html>
-<head>
-		<title>Sample Layout</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href="https://fonts.googleapis.com/css?family=Advent+Pro:400,500&display=swap" rel="stylesheet">
+        <script src="html2canvas.min.js"></script>
+        <script src="chance.min.js"></script>
+        <script src="jquery-2.1.4.js"></script>
+        <script src="jquery-ui-1.9.2.custom.min.js"></script>
+    </head>
+    <body>
+            <div class="content">
+                    <button id="start-btn">Snap!</button>
+        <div class="sidenav">
+            <img src="art/logo.jpg" class="logo" >
+            <p>Mario Marasigan</p>
+            <a href="#">Personal project</a>
+            <a href="#">Commissioned Work</a>
+            <a href="#">Events</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+           
 
-
-<link rel="stylesheet" type="text/css" href="index.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-  <script src="https://js.stripe.com/v3/"></script>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
-<body>
-
-<div class="container">
-  <h2>Payment Details</h2>
-  <div class="panel w3-card-4">
-    <div class="panel-heading"><i class='fas fa-lock' style='font-size:15px'></i> This is a secure 128-bit SSL Encrypted payment. You're safe.</div>
-
-    <div class="panel-body">
-    	<label for="fullname">Full Name on a Card</label>
-    	<input class="form-control form-control-lg" type="text" name="fullname" placeholder="Morris Reyes" required>
-    	<form action="/charge" method="post" id="payment-form">
-    		<br>
-  <div class="form-row">
-    <label for="card-element">
-      Card number <small>The 16 digits on front of your card</small>
-    </label>
-    <div id="card-element">
-      <!-- A Stripe Element will be inserted here. -->
+        </div>
+   
+<div class="main">
+        <div class="row"> 
+            
+            <div class="column">
+              <img src="art/img1.png" style="width:100%">
+              <div class="overlay">My Name is John</div>
+              <img src="art/img3.png" style="width:100%">
+              <div class="overlay">My Name is John</div>
+              <img src="art/img4.png" style="width:100%">
+              <div class="overlay">My Name is John</div>
+              <img src="art/img6.png" style="width:100%">
+              <div class="overlay">My Name is John</div>
+             
+            </div>
+            <div class="column">
+              <img src="art/img5.png" style="width:100%">
+              <img src="art/img7.png" style="width:100%">
+              <img src="art/img8.png" style="width:100%">
+              <img src="art/img9.png" style="width:100%">
+              
+            </div>  
+            <div class="column">
+              <img src="art/img10.png" style="width:100%">
+              <img src="art/img11.png" style="width:100%">
+              <img src="art/img12.png" style="width:100%">
+              <img src="art/img13.png" style="width:100%">
+              
+            </div>
+            <div class="column">
+              <img src="art/img14.png" style="width:100%">
+              <img src="art/img15.png" style="width:100%">
+              <img src="art/img16.png" style="width:100%">
+              <img src="art/img17.png" style="width:100%">
+              
+            </div>
+          </div>
+        </div>
     </div>
-
-    <!-- Used to display form errors. -->
-    <div id="card-errors" role="alert"></div>
-  </div>
-<br>
-  <label for="chkPassport">
-    <input type="checkbox" id="chkPassport" />
-   Discount Coupon
-</label>
-
-<div id="dvPassport" style="display: none;font-size: 25px;" >
-   <p class="label label-warning">10% discount</p>
-</div>
-                                   
-<input id="jpy" type="checkbox" name="jpy" value="0.0089613765"  />
-US dollars to Japanese Yen
-</div>
-<div class="panel-footer">
-	You will be charged $<input id="sum" class="sum" type="text" name="sum" value="29" style="width: 30px;" readonly="" disabled="disabled"><input id="cash2"class="cash1" type="text" name="cash1" value="2.90" readonly="" disabled="disabled" hidden=""><input id="cash1"class="cash2" type="text" name="cash2" value="29"readonly="" disabled="disabled"  hidden="">every month
-</div>
-  </div>
-  <button class="btn btn-primary btn-lg btn-block">Complete You're Transaction</button>
-</form>
-
-
-</div>
-
-  <script src="js/l10n.js" data-rel-js></script>
-
-  <!-- Scripts for each example: -->
-  <script src="js/example2.js" data-rel-js></script>
-<script type="text/javascript">
-	$(function () {
-        $("#chkPassport").click(function () {
-            if ($(this).is(":checked")) {
-                $("#dvPassport").show();
-                $("#AddPassport").hide();
-                $("#sum").val(Number($("#cash1").val()) - Number($("#cash2").val()));
-            } else {
-                $("#dvPassport").hide();
-                $("#AddPassport").show();
-                $("#sum").val(Number($("#cash2").val()) + Number($("#sum").val()));
+        <script> 
+    
+            var imageDataArray = [];
+            var canvasCount = 35;
+            $("#start-btn").click(function(){
+              
+              html2canvas($(".content")[0]).then(canvas => {
+                //capture all div data as image
+                ctx = canvas.getContext("2d");
+                var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                var pixelArr = imageData.data;
+                createBlankImageData(imageData);
+                //put pixel info to imageDataArray (Weighted Distributed)
+                for (let i = 0; i < pixelArr.length; i+=4) {
+                  //find the highest probability canvas the pixel should be in
+                  let p = Math.floor((i/pixelArr.length) *canvasCount);
+                  let a = imageDataArray[weightedRandomDistrib(p)];
+                  a[i] = pixelArr[i];
+                  a[i+1] = pixelArr[i+1];
+                  a[i+2] = pixelArr[i+2];
+                  a[i+3] = pixelArr[i+3]; 
+                }
+                //create canvas for each imageData and append to target element
+                for (let i = 0; i < canvasCount; i++) {
+                  let c = newCanvasFromImageData(imageDataArray[i], canvas.width, canvas.height);
+                  c.classList.add("dust");
+                  $("body").append(c);
+                }
+                //clear all children except the canvas
+                $(".content").children().not(".dust").fadeOut(3500);
+                //apply animation
+                $(".dust").each( function(index){
+                  animateBlur($(this),0.8,800);
+                  setTimeout(() => {
+                    animateTransform($(this),100,-100,chance.integer({ min: -15, max: 15 }),800+(110*index));
+                  }, 70*index); 
+                  //remove the canvas from DOM tree when faded
+                  $(this).delay(70*index).fadeOut((110*index)+800,"easeInQuint",()=> {$( this ).remove();});
+                });
+              });
+            });
+            function weightedRandomDistrib(peak) {
+              var prob = [], seq = [];
+              for(let i=0;i<canvasCount;i++) {
+                prob.push(Math.pow(canvasCount-Math.abs(peak-i),3));
+                seq.push(i);
+              }
+              return chance.weighted(seq, prob);
             }
-        });
-    });
-</script>
-
-<script type="text/javascript">
-	$(function () {
-        $("#jpy").click(function () {
-            if ($(this).is(":checked")) {
-                $("#sum").val(Number($("#jpy").val())* Number($("#sum").val()));
-            } else {
-    $("#sum").val(29.00);
+            function animateBlur(elem,radius,duration) {
+              var r =0;
+              $({rad:0}).animate({rad:radius}, {
+                  duration: duration,
+                  easing: "easeOutQuad",
+                  step: function(now) {
+                    elem.css({
+                          filter: 'blur(' + now + 'px)'
+                      });
+                  }
+              });
             }
-        });
-    });
-</script>
-
-
-</body>
+            function animateTransform(elem,sx,sy,angle,duration) {
+              var td = tx = ty =0;
+              $({x: 0, y:0, deg:0}).animate({x: sx, y:sy, deg:angle}, {
+                  duration: duration,
+                  easing: "easeInQuad",
+                  step: function(now, fx) {
+                    if (fx.prop == "x") 
+                      tx = now;
+                    else if (fx.prop == "y") 
+                      ty = now;
+                    else if (fx.prop == "deg") 
+                      td = now;
+                    elem.css({
+                          transform: 'rotate(' + td + 'deg)' + 'translate(' + tx + 'px,'+ ty +'px)'
+                      });
+                  }
+              });
+            }
+            function createBlankImageData(imageData) {
+              for(let i=0;i<canvasCount;i++)
+              {
+                let arr = new Uint8ClampedArray(imageData.data);
+                for (let j = 0; j < arr.length; j++) {
+                    arr[j] = 0;
+                }
+                imageDataArray.push(arr);
+              }
+            }
+            function newCanvasFromImageData(imageDataArray ,w , h) {
+              var canvas = document.createElement('canvas');
+                  canvas.width = w;
+                  canvas.height = h;
+                  tempCtx = canvas.getContext("2d");
+                  tempCtx.putImageData(new ImageData(imageDataArray, w , h), 0, 0);
+                  
+              return canvas;
+            }
+            </script>
+    </body>
 </html>
