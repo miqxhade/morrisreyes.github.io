@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/commision.css">
+        <link href="https://fonts.googleapis.com/css?family=Advent+Pro:400,500&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="sidenav">
+            <img src="art/logos.png" class="logo" >
+            <a href="index.html">Personal project</a>
+            <a href="#">Commissioned Work</a>
+            <a href="#">Events</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+><div class="main">
+        <div class="row"> 
+            <div class="column">
+              <img src="art/art1.png" style="width:100%" class="swing">
+              <img src="art/art3.png" style="width:100%" class="swing">
+              <img src="art/art5.png" style="width:100%" class="swing">
+              <img src="art/art4.png" style="width:100%" class="swing">
+             
+            </div>
+            <div class="column">
+              <img src="art/art2.png" style="width:100%" class="swing">
+              <img src="art/art6.png" style="width:100%" class="swing">
+              <img src="art/art7.png" style="width:100%" class="swing">
+              <img src="art/art8.png" style="width:100%" class="swing">
+              
+            </div>  
+            <div class="column">
+              <img src="art/art9.png" style="width:100%" class="swing">
+              <img src="art/art12.png" style="width:100%" class="swing">
+              <img src="art/art10.png" style="width:100%" class="swing">
+              <img src="art/art11.png" style="width:100%" class="swing">
+              
+            </div>
+            <div class="column">
+              <img src="art/art13.png" style="width:100%" class="swing">
+              <img src="art/art14.png" style="width:100%" class="swing">
+              <img src="art/art15.png" style="width:100%" class="swing">
+              <img src="art/art16.png" style="width:100%" class="swing">
+              
+            </div>
+          </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <div id="myModal" class="modal">
+
+          <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+        
+          <img class="modal-content" id="img01">
+        
+          <div id="caption"></div>
+        </div>
+        <script>
+var modal = document.getElementById('myModal');
+
+var img = $('.swing');
+var modalImg = $("#img01");
+var captionText = document.getElementById("caption");
+$('.swing').click(function(){
+    modal.style.display = "block";
+    var newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
+});
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+        </script>
+
+
+    </body>
+</html>
